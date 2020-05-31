@@ -137,8 +137,13 @@ export default {
       this.$store.commit('mutateShipmentFee');
       this.$store.state.paymentSelected = this.paymentSelected;
       this.$store.commit('mutatePaymentSelected');      
-      this.$store.state.orderID = Math.random().toString(36).substring(2, 5) + Math.random().toString(36).substring(2, 4);
+      this.$store.state.orderID = this.randomString(5, '23456789ABCDEFGHJKLMNPQRSTUVWXYZ');;
       this.$store.commit('mutateOrderID');
+    },
+    randomString(length, chars) {
+      var result = '';
+      for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+      return result;
     },
     calculateFee(){
       if(this.shipment.selected == 'GO-SEND'){

@@ -7,8 +7,7 @@
       </h1>
       <br>
       <p class="order__code">
-        Order ID : 
-        <span class="order__id">{{ this.$store.state.orderID }}</span>
+        Order ID : {{ this.$store.state.orderID }}
       </p>
       <p>Your order will be delivered today with {{ this.$store.state.shipmentSelected }}</p>
       <br><br>
@@ -71,6 +70,4 @@ export default {
       padding 130px 20%
     &__code
       color black
-    &__id
-      text-transform uppercase
 </style>
